@@ -7,7 +7,8 @@ const RoomCard = ({ roomInfo }) => {
 
   const handleBooking = (name) => {
     const dest = "+917439972241";
-    const message = `Hello! I am interested in: ${name}%0AThank You!`;
+    const message = `Hello! I am interested in: ${name}%0A
+Thank You!`;
     const url = `https://api.whatsapp.com/send?phone=${dest}&text=${encodeURIComponent(
       message
     )}`;

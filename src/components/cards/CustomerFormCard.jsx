@@ -9,7 +9,7 @@ const CustomerFormCard = () => {
       return;
     }
 
-    const dest = "+917439972241";
+    const dest = "+918920907973";
 
     const message = `*Name:* ${formValues.name}%0A
 *Phone:* ${formValues.mobile}%0A
