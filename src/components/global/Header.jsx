@@ -8,24 +8,14 @@ import CustomerFormCard from "@/components/cards/CustomerFormCard";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/" },
-    { name: "Our Rooms", path: "/", hasDropdown: true },
-    { name: "Testimonials", path: "/" },
-    { name: "Contact Us", path: "/" },
-  ];
-
-  const megaMenu = [
-    { title: "Single Occupancy", link: "/" },
-    { title: "Double Occupancy", link: "/" },
-    { title: "Triple Occupancy", link: "/" },
-    { title: "Quadruple Occupancy", link: "/" },
-    { title: "Hall", link: "/" },
-    { title: "Dormitory", link: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Our Rooms", path: "/rooms" },
+    { name: "Testimonials", path: "/testimonials" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   const toggleMenu = () => {
@@ -46,38 +36,13 @@ const Header = () => {
         {/* Desktop Menu */}
         <div className="hidden lg:flex lg:gap-5 lg:items-center font-semibold">
           {menuItems.map((item, index) => (
-            <div
+            <Link
               key={index}
-              className="relative group"
-              onMouseEnter={() => item.hasDropdown && setServicesOpen(true)}
-              onMouseLeave={() => item.hasDropdown && setServicesOpen(false)}
+              href={item.path}
+              className="hover:text-defined-green"
             >
-              <Link href={item.path} className="hover:text-defined-green">
-                {item.name}
-              </Link>
-
-              {item.hasDropdown && (
-                <div
-                  className={`absolute left-0 top-full w-[250px] bg-gradient-to-r from-white via-[#F0FFDE] to-[#E5F6FF] text-black shadow-lg rounded-lg p-4 flex flex-col transition-all duration-300 transform ${
-                    servicesOpen
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 -translate-y-3 pointer-events-none"
-                  }`}
-                  onMouseEnter={() => setServicesOpen(true)}
-                  onMouseLeave={() => setServicesOpen(false)}
-                >
-                  {megaMenu.map((category, index) => (
-                    <Link
-                      key={index}
-                      href={category.link}
-                      className="block py-2 hover:underline hover:text-defined-green"
-                    >
-                      {category.title}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+              {item.name}
+            </Link>
           ))}
         </div>
 
@@ -85,7 +50,7 @@ const Header = () => {
         <div className="hidden lg:flex lg:gap-5">
           <button
             onClick={toggleBookingModal}
-            className="bg-defined-green text-white py-2 px-8 rounded-full transition-all duration-300 font-semibold hover:bg-green-700"
+            className="bg-defined-green text-white py-2 px-8 rounded-full transition-all duration-700 font-semibold hover:bg-green-700"
           >
             Book Now
           </button>
@@ -107,49 +72,16 @@ const Header = () => {
               : "opacity-0 scale-95 pointer-events-none"
           }`}
         >
-          {menuItems.map((item, index) =>
-            item.hasDropdown ? (
-              <div key={index} className="w-full text-center">
-                <button
-                  className="hover:text-defined-green w-full text-left font-semibold flex justify-between items-center py-2"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setServicesOpen(!servicesOpen);
-                  }}
-                >
-                  {item.name}
-                  <span>{servicesOpen ? "▲" : "▼"}</span>
-                </button>
-
-                <div
-                  className={`transition-all duration-300 text-left ${
-                    servicesOpen
-                      ? "max-h-[500px] opacity-85 overflow-y-auto"
-                      : "max-h-0 opacity-0 overflow-hidden"
-                  }`}
-                >
-                  {megaMenu.map((category, index) => (
-                    <Link
-                      key={index}
-                      href={category.link}
-                      className="block px-5 py-2 hover:underline hover:text-defined-green"
-                    >
-                      {category.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <Link
-                key={index}
-                href={item.path}
-                onClick={toggleMenu}
-                className="hover:text-blue-600"
-              >
-                {item.name}
-              </Link>
-            )
-          )}
+          {menuItems.map((item, index) => (
+            <Link
+              key={index}
+              href={item.path}
+              onClick={toggleMenu}
+              className="hover:text-blue-600"
+            >
+              {item.name}
+            </Link>
+          ))}
 
           <button
             onClick={toggleBookingModal}
@@ -160,7 +92,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black bg-opacity-50">
           <div className=" w-[90%] max-w-md p-6 rounded-lg shadow-lg relative">

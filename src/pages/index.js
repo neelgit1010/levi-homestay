@@ -1,9 +1,9 @@
-import AboutSection from "@/home/AboutSection";
-import BannerComponent from "@/home/BannerComponent";
-import BookandCount from "@/home/BookandCount";
-import CustomerReviewSection from "@/home/CustomerReviewSection";
-import HotelSection from "@/home/HotelSection";
-import RoomSection from "@/home/RoomSection";
+import AboutSection from "@/components/home/AboutSection";
+import BannerComponent from "@/components/home/BannerComponent";
+import BookandCount from "@/components/home/BookandCount";
+import CustomerReviewSection from "@/components/home/CustomerReviewSection";
+import HotelSection from "@/components/home/HotelSection";
+import RoomSection from "@/components/home/RoomSection";
 import MainTemplate from "@/templates/MainTemplate";
 
 export default function Home() {

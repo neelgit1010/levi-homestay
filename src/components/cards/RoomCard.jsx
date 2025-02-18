@@ -27,37 +27,39 @@ const RoomCard = ({ roomInfo }) => {
     },
   ];
   return (
-    <div className="h-[30rem] w-[26rem] rounded-md shadow-lg">
-      <div>
+    <div className="rounded-md shadow-lg w-full h-full">
+      <div className="w-full">
         <Image
           src={roomInfo.img}
           alt="single"
           width={500}
           height={500}
+          className="w-full h-full"
         />
       </div>
 
-      <div className="flex justify-between items-center p-4">
-        {items &&
-          items.map((item, index) => (
-            <div className="flex gap-1 flex-col justify-center items-center">
-              <div className="text-2xl text-defined-orange">{item.icon}</div>
-              <div className="text-defined-blue">{item.name}</div>
-              <div className="text-defined-blue">{item.value}</div>
-            </div>
-          ))}
-      </div>
-
-      <div className="flex flex-col justify-center items-center gap-3">
-        <div>
-          <h1 className="text-defined-blue text-3xl font-semibold text-center">{roomInfo.name}</h1>
+      <div className="p-4 flex flex-col gap-4">
+        <div className="flex justify-between items-center">
+          {items &&
+            items.map((item, index) => (
+              <div className="flex gap-1 flex-col justify-center items-center">
+                <div className="text-2xl text-defined-orange">{item.icon}</div>
+                <div className="text-defined-blue">{item.name}</div>
+                <div className="text-defined-blue">{item.value}</div>
+              </div>
+            ))}
         </div>
-        <button
-          // onClick={toggleAppointmentModal}
-          className="bg-defined-green text-white py-2 px-8 rounded-sm transition-all duration-300 font-semibold hover:bg-green-700 w-[90%]"
-        >
-          Book Now
-        </button>
+
+        <div className="flex flex-col justify-center items-center gap-3">
+          <div>
+            <h1 className="text-defined-blue text-3xl font-semibold text-center">
+              {roomInfo.name}
+            </h1>
+          </div>
+          <button className="bg-defined-green text-white py-2 px-8 rounded-sm transition-all duration-300 font-semibold hover:bg-green-700 w-[90%]">
+            Book Now
+          </button>
+        </div>
       </div>
     </div>
   );

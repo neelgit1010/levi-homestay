@@ -1,6 +1,6 @@
-import BookingCount from "@/components/BookingCount";
-import BookingHoliday from "@/components/BookingHoliday";
 import { useInView } from "react-intersection-observer";
+import BookingHoliday from "../BookingHoliday";
+import BookingCount from "../BookingCount";
 
 const BookandCount = () => {
   const countings = [
