@@ -1,9 +1,19 @@
-import React from "react";
+import { useState } from "react";
 
 const BookingHoliday = () => {
+  const [formValues, setFormValues] = useState({});
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    //TODO
+    
+    const dest = "+918920907973";
+
+    const message = `*Name:* ${formValues.name}%0A
+*Phone:* ${formValues.mobile}%0A
+*Number of Guests:* ${formValues.guests}%0A
+*Date:* ${formValues.date}%0A`
+
+    const url = `https://api.whatsapp.com/send?phone=${dest}&text=${message}`;
+    window.open(url, "_blank").focus();
   };
 
   return (
@@ -30,22 +40,30 @@ const BookingHoliday = () => {
               <input
                 type="text"
                 placeholder="Name"
+                name="name"
                 className="md:w-[20%] w-full p-2  rounded"
+                onChange={(e) => setFormValues({ ...formValues, name: e.target.value })}
               />
               <input
                 type="text"
                 placeholder="Mobile Number"
+                name="mobile"
                 className="md:w-[20%] w-full p-2  rounded"
+                onChange={(e) => setFormValues({ ...formValues, mobile: e.target.value })}
               />
               <input
-                type="text"
+                type="number"
                 placeholder="Number of Guests"
+                name="guests"
                 className="md:w-[20%] w-full p-2  rounded"
+                onChange={(e) => setFormValues({ ...formValues, guests: e.target.value })}
               />
               <input
-                type="text"
+                type="date"
                 placeholder="Date"
+                name="date"
                 className="md:w-[20%] w-full p-2  rounded"
+                onChange={(e) => setFormValues({ ...formValues, date: e.target.value })}
               />
               <button
                 type="submit"

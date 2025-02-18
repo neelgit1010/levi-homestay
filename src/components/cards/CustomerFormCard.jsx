@@ -1,7 +1,25 @@
+import { useState } from "react";
+
 const CustomerFormCard = () => {
+  const [formValues, setFormValues] = useState({});
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    //TODO
+    if(!formValues.name || !formValues.mobile || !formValues.checkin || !formValues.checkout || !formValues.guests || !formValues.message){
+      alert("Please fill all the fields");
+      return;
+    }
+
+    const dest = "+917439972241";
+
+    const message = `*Name:* ${formValues.name}%0A
+*Phone:* ${formValues.mobile}%0A
+*Check-in Date:* ${formValues.checkin}%0A
+*Check-out Date:* ${formValues.checkout}%0A
+*No. of Guests:* ${formValues.guests}%0A
+*Message:* ${formValues.message}`;
+
+    const url = `https://api.whatsapp.com/send?phone=${dest}&text=${message}`;
+    window.open(url, "_blank").focus();
   };
 
   return (
@@ -21,29 +39,49 @@ const CustomerFormCard = () => {
               <input
                 type="text"
                 placeholder="Guest Name"
+                name="name"
                 className=" w-full p-2  rounded opacity-90"
+                onChange={(e) =>
+                  setFormValues({ ...formValues, name: e.target.value })
+                }
               />
               <input
                 type="text"
                 placeholder="Mobile Number"
+                name="mobile"
                 className=" w-full p-2  rounded"
+                onChange={(e) =>
+                  setFormValues({ ...formValues, mobile: e.target.value })
+                }
               />
               <div className="flex items-center justify-center gap-4 w-full">
                 <input
-                  type="text"
+                  type="date"
                   placeholder="Checkin Date"
+                  name="checkin"
                   className="w-1/2 p-2  rounded"
+                  onChange={(e) =>
+                    setFormValues({ ...formValues, checkin: e.target.value })
+                  }
                 />
                 <input
-                  type="text"
+                  type="date"
                   placeholder="Checkout Date"
+                  name="checkout"
                   className="w-1/2 p-2  rounded"
+                  onChange={(e) =>
+                    setFormValues({ ...formValues, checkout: e.target.value })
+                  }
                 />
               </div>
               <input
-                type="text"
+                type="number"
                 placeholder="No of Guests"
+                name="guests"
                 className="w-full p-2  rounded"
+                onChange={(e) =>
+                  setFormValues({ ...formValues, guests: e.target.value })
+                }
               />
               <textarea
                 name="message"
@@ -52,6 +90,9 @@ const CustomerFormCard = () => {
                 cols="30"
                 rows="3"
                 className=" w-full p-2  rounded"
+                onChange={(e) =>
+                  setFormValues({ ...formValues, message: e.target.value })
+                }
               ></textarea>
               <button
                 type="submit"

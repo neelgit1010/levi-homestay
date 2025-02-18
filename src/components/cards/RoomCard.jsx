@@ -4,6 +4,17 @@ import { MdOutlineGroup } from "react-icons/md";
 import { PiHamburgerDuotone } from "react-icons/pi";
 
 const RoomCard = ({ roomInfo }) => {
+
+  const handleBooking = (name) => {
+    const dest = "+917439972241";
+    const message = `Hello! I am interested in: ${name}%0AThank You!`;
+    const url = `https://api.whatsapp.com/send?phone=${dest}&text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank").focus();
+  };
+
+
   const items = [
     {
       icon: <FaRupeeSign />,
@@ -56,7 +67,9 @@ const RoomCard = ({ roomInfo }) => {
               {roomInfo.name}
             </h1>
           </div>
-          <button className="bg-defined-green text-white py-2 px-8 rounded-sm transition-all duration-300 font-semibold hover:bg-green-700 w-[90%]">
+          <button className="bg-defined-green text-white py-2 px-8 rounded-sm transition-all duration-300 font-semibold hover:bg-green-700 w-[90%]"
+            onClick={() => handleBooking(roomInfo.name)}
+          >
             Book Now
           </button>
         </div>

@@ -97,7 +97,7 @@ const Header = () => {
           <div className=" w-[90%] max-w-md p-6 rounded-lg shadow-lg relative">
             <button
               onClick={toggleBookingModal}
-              className="absolute top-7 rounded-md bg-white p-2 opacity-55 right-8 z-[80] text-xl text-gray-700 hover:text-red-500"
+              className="absolute top-7 rounded-md bg-white p-2 opacity-55 right-10 z-[80] text-xl text-gray-700 hover:text-red-500"
             >
               ✖
             </button>
