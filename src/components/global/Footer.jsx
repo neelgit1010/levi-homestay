@@ -1,8 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import {
-  FaFacebook,
-  FaGoogle,
   FaMobile,
   FaWhatsapp,
 } from "react-icons/fa";
@@ -11,6 +9,19 @@ import { IoLocationSharp } from "react-icons/io5";
 import Link from "next/link";
 
 const Footer = () => {
+  const quickLinks = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Our Rooms", path: "/rooms" },
+    { name: "Testimonials", path: "/testimonials" },
+    { name: "Contact Us", path: "/contact" },
+  ]
+  const rooms = [
+    { name: "Single Occupancy"},
+    { name: "Double Occupancy" },
+    { name: "Triple Occupancy" },
+    { name: "Quad Occupancy" },
+  ]
   return (
     <footer className="relative w-full p-6 lg:p-8 border-t-4 border-defined-orange">
 
@@ -59,15 +70,9 @@ const Footer = () => {
               <div className="w-1/2">
                 <h1 className="font-bold">Quick Links</h1>
                 <ul className="text-white text-sm">
-                  {[
-                    "Home",
-                    "About Us",
-                    "Rooms",
-                    "Testimonials",
-                    "Contact Us",
-                  ].map((item, index) => (
+                  {quickLinks.map((item, index) => (
                     <li key={index} className="py-1">
-                      <Link href="/">{item}</Link>
+                      <Link href={item.path}>{item.name}</Link>
                     </li>
                   ))}
                 </ul>
@@ -85,7 +90,7 @@ const Footer = () => {
                     "Levi's Kitchen",
                   ].map((item, index) => (
                     <li key={index} className="py-1">
-                      <Link href="/">{item}</Link>
+                      <Link href="/rooms">{item}</Link>
                     </li>
                   ))}
                 </ul>
