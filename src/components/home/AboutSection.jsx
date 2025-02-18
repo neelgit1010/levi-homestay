@@ -28,26 +28,26 @@ const AboutSection = () => {
         <div className="md:w-1/2 w-full">
           <div
             className=" flex w-full items-center"
-            style={{
-              height: isSmallScreen ? "auto" : `${rightSideHeight}px`,
-            }}
+            ref={leftSideRef}
           >
             <div className="relative w-[10%] flex justify-center items-center">
-              <div className="md:text-xl text-xs font-semibold  -rotate-90 text-nowrap absolute transform -translate-y-1/2">
+              <div className="md:text-xl text-base font-semibold  -rotate-90 text-nowrap absolute transform -translate-y-1/2">
                 <span className="text-defined-green">
                   Since 2002 - 21 years
                 </span>{" "}
                 <span className="text-defined-blue">of experience</span>
               </div>
             </div>
-            <div className="w-full">
+            <div className="w-full" style={{
+              height: isSmallScreen ? "auto" : `${rightSideHeight}px`,
+            }}>
               <Image
                 src="/images/book-form.png"
                 alt="book-form"
                 width={556}
                 height={537}
                 className="w-full h-full"
-                ref={leftSideRef}
+
               />
             </div>
           </div>
