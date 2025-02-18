@@ -28,8 +28,7 @@ const HotelSection = () => {
                 at home with us! Comfort redefined!
               </p>
               <button
-                // onClick={toggleAppointmentModal}
-                className="bg-white text-xl text-defined-green py-2 px-8 rounded-sm transition-all duration-300 font-semibold hover:bg-gray-600"
+                className="bg-white text-xl text-defined-green py-2 px-8 rounded-sm transition-all duration-300 font-semibold hover:bg-gray-200"
               >
                 Book Now!
               </button>
