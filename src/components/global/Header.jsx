@@ -29,9 +29,17 @@ const Header = () => {
   return (
     <header>
       <div className="flex justify-between items-center md:px-6 px-4 fixed lg:px-8 h-[4.5rem] md:h-[5rem] w-full z-[60] bg-white shadow-md">
-        <div>
-          <Image src="/logo.png" alt="logo" width={220} height={40} priority />
-        </div>
+        <Link href={"/"}>
+          <div>
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={220}
+              height={40}
+              priority
+            />
+          </div>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex lg:gap-5 lg:items-center font-semibold">

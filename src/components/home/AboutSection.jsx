@@ -1,15 +1,19 @@
-// import HomeStayContent from "../HomeStayContent";
-// import HomeStayImg from "../HomeStayImg";
 import Image from "next/image";
 import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import { FaRupeeSign } from "react-icons/fa";
 import useElementHeight from "@/hooks/useElementHeight";
 import { useEffect, useState } from "react";
+import CustomerFormCard from "../cards/CustomerFormCard";
 
 
 const AboutSection = () => {
-  const [rightSideHeight, leftSideRef] = useElementHeight();
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const [rightSideHeight, leftSideRef] = useElementHeight();
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const toggleBookingModal = () => {
+      setIsModalOpen(!isModalOpen);
+    };
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth < 768);
@@ -26,10 +30,7 @@ const AboutSection = () => {
     <section>
       <div className="flex flex-col md:flex-row justify-center gap-4 p-6">
         <div className="md:w-1/2 w-full">
-          <div
-            className=" flex w-full items-center"
-            ref={leftSideRef}
-          >
+          <div className=" flex w-full items-center" ref={leftSideRef}>
             <div className="relative w-[10%] flex justify-center items-center">
               <div className="md:text-xl text-base font-semibold  -rotate-90 text-nowrap absolute transform -translate-y-1/2">
                 <span className="text-defined-green">
@@ -38,16 +39,18 @@ const AboutSection = () => {
                 <span className="text-defined-blue">of experience</span>
               </div>
             </div>
-            <div className="w-full" style={{
-              height: isSmallScreen ? "auto" : `${rightSideHeight}px`,
-            }}>
+            <div
+              className="w-full"
+              style={{
+                height: isSmallScreen ? "auto" : `${rightSideHeight}px`,
+              }}
+            >
               <Image
                 src="/images/book-form.png"
                 alt="book-form"
                 width={556}
                 height={537}
                 className="w-full h-full"
-
               />
             </div>
           </div>
@@ -98,10 +101,24 @@ const AboutSection = () => {
               </div>
             </div>
             <div className="flex justify-center md:justify-start">
-              <button className="bg-defined-green text-white text-xl py-2 px-8 rounded-md transition-all duration-300 font-semibold hover:bg-green-700">
+              <button onClick={toggleBookingModal} className="bg-defined-green text-white text-xl py-2 px-8 rounded-md transition-all duration-300 font-semibold hover:bg-green-700">
                 Inquiry Now
               </button>
             </div>
+
+            {isModalOpen && (
+              <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black bg-opacity-50">
+                <div className="w-[90%] max-w-md p-6 rounded-lg shadow-lg relative">
+                  <button
+                    onClick={toggleBookingModal} 
+                    className="absolute cursor-pointer top-6 md:right-11 right-2 z-40 text-2xl opacity-50 text-gray-700 hover:text-red-500 bg-white"
+                  >
+                    ✖
+                  </button>
+                  <CustomerFormCard />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
