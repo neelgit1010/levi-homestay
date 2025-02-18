@@ -1,7 +1,12 @@
+import ContactInfoSection from "@/components/contact/ContactInfoSection";
+import BannerComponent from "@/components/home/BannerComponent";
+import MainTemplate from "@/templates/MainTemplate";
+
 export default function Contact() {
   return (
-    <>
-      <h1>Contact</h1>
-    </>
+    <MainTemplate>
+      <BannerComponent />
+      <ContactInfoSection />
+    </MainTemplate>
   );
 }

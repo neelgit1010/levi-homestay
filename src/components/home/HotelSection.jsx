@@ -3,14 +3,14 @@ const HotelSection = () => {
     e.preventDefault();
     //TODO
   };
-
   return (
+    
     <div className="flex w-full justify-center items-center">
       <div>
         {/* Background Section */}
         <div
           style={{ backgroundImage: `url(/images/book-form.png)` }}
-          className="relative bg-cover bg-center bg-no-repeat w-full h-[15rem] md:h-[30rem] border flex justify-center md:justify-between"
+          className="relative bg-cover bg-center bg-no-repeat w-full h-auto border flex justify-center md:justify-between"
         >
           <div className="absolute inset-0 bg-defined-green opacity-50"></div>
 

@@ -26,27 +26,28 @@ const AboutSection = () => {
     <section>
       <div className="flex flex-col md:flex-row justify-center gap-4 p-6">
         <div className="md:w-1/2 w-full">
-          <div className=" flex w-full items-center" ref={leftSideRef}>
+          <div
+            className=" flex w-full items-center"
+            style={{
+              height: isSmallScreen ? "auto" : `${rightSideHeight}px`,
+            }}
+          >
             <div className="relative w-[10%] flex justify-center items-center">
-              <div className="md:text-xl text-sm font-semibold  -rotate-90 text-nowrap absolute transform -translate-y-1/2">
+              <div className="md:text-xl text-xs font-semibold  -rotate-90 text-nowrap absolute transform -translate-y-1/2">
                 <span className="text-defined-green">
                   Since 2002 - 21 years
                 </span>{" "}
                 <span className="text-defined-blue">of experience</span>
               </div>
             </div>
-            <div
-              className="w-full"
-              style={{
-                height: isSmallScreen ? "auto" : `${rightSideHeight}px`,
-              }}
-            >
+            <div className="w-full">
               <Image
                 src="/images/book-form.png"
                 alt="book-form"
                 width={556}
                 height={537}
                 className="w-full h-full"
+                ref={leftSideRef}
               />
             </div>
           </div>
@@ -97,10 +98,7 @@ const AboutSection = () => {
               </div>
             </div>
             <div className="flex justify-center md:justify-start">
-              <button
-                // onClick={toggleAppointmentModal}
-                className="bg-defined-green text-white text-xl py-2 px-8 rounded-md transition-all duration-300 font-semibold hover:bg-green-700"
-              >
+              <button className="bg-defined-green text-white text-xl py-2 px-8 rounded-md transition-all duration-300 font-semibold hover:bg-green-700">
                 Inquiry Now
               </button>
             </div>

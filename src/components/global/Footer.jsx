@@ -13,7 +13,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="relative w-full p-6 lg:p-8 border-t-4 border-defined-orange">
-      {/* Background Image & Overlay */}
+
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(/foot-img.png)` }}
@@ -21,7 +21,6 @@ const Footer = () => {
         <div className="absolute inset-0 bg-defined-blue opacity-90"></div>{" "}
       </div>
 
-      {/* Content */}
       <div className="relative z-10 text-white">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col lg:flex-row gap-6">
@@ -51,25 +50,6 @@ const Footer = () => {
                     Punjabi Para, Mission Compound, Shiv Mandir Rd. Siliguri, WB
                     734001
                   </span>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-sm text-defined-gray">Find Us</h1>
-                <div className="flex gap-2">
-                  <a
-                    href={
-                      "https://www.facebook.com/people/Levi-Home/61550614208974/"
-                    }
-                    target="_blank"
-                  >
-                    <FaFacebook className="text-defined-orange" />
-                  </a>
-                  <a
-                    href={"https://maps.app.goo.gl/9YdAtRMTDVHWRE976"}
-                    target="_blank"
-                  >
-                    <FaGoogle className="text-defined-orange" />
-                  </a>
                 </div>
               </div>
             </div>
@@ -131,8 +111,8 @@ const Footer = () => {
         <div className="text-sm text-white flex flex-col md:flex-row justify-between items-center">
           <h1>
             © 2025{" "}
-            <span className="text-defined-orange">
-              Prime Healthcare Diagnostics
+            <span className="text-defined-green">
+              Levi Homestay
             </span>{" "}
             - All Rights Reserved
           </h1>
