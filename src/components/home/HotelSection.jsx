@@ -44,7 +44,7 @@ const HotelSection = () => {
             <div className="w-[90%] max-w-md p-6 rounded-lg shadow-lg relative">
               <button
                 onClick={toggleBookingModal}
-                className="absolute cursor-pointer top-6 md:right-11 right-2 z-40 text-2xl opacity-50 text-gray-700 hover:text-red-500 bg-white"
+                className="absolute cursor-pointer top-6 md:right-11 right-6 z-40 text-2xl opacity-50 text-gray-700 hover:text-red-500 bg-white"
               >
                 ✖
               </button>
