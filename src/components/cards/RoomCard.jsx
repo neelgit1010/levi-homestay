@@ -9,7 +9,7 @@ const RoomCard = ({ roomInfo }) => {
     const dest = "+918920907973";
     const message = `Hello! I am interested in: ${name}%0A
 Thank You!`;
-    const url = `https://api.whatsapp.com/send?phone=${dest}&text=${message}`;
+    const url = `https://api.whatsapp.com/send?phone=${dest}&text=${encodeURIComponent(message)}`;
     window.open(url, "_blank").focus();
   };
 
