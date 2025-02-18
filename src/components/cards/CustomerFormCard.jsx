@@ -27,7 +27,7 @@ const CustomerFormCard = () => {
       <div>
         <div
           style={{ backgroundImage: `url(/images/cust-form.png)` }}
-          className="relative bg-cover bg-center bg-no-repeat w-full h-[30rem] flex items-center justify-center md:justify-between"
+          className="relative bg-cover bg-center bg-no-repeat w-full h-auto flex items-center justify-center md:justify-between"
         >
           <div className="absolute inset-0 bg-defined-green opacity-50"></div>
 
