@@ -118,7 +118,7 @@ const Header = () => {
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black bg-opacity-50">
           <div
             ref={modalRef}
             className=" w-[90%] max-w-md p-6 rounded-lg shadow-lg relative"
