@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import {
   FaMobile,
   FaWhatsapp,
@@ -7,6 +7,7 @@ import {
 import { MdEmail } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
 import Link from "next/link";
+import CustomerFormCard from "../cards/CustomerFormCard";
 
 const Footer = () => {
   const quickLinks = [
@@ -17,6 +18,10 @@ const Footer = () => {
     { name: "Contact Us", path: "/contact" },
   ]
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleBookingModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
     <footer className="relative w-full p-6 lg:p-8 border-t-4 border-defined-orange">
       <div
@@ -98,7 +103,29 @@ const Footer = () => {
                 loading="lazy"
                 className="rounded-lg w-full h-[10rem] lg:h-[12rem]"
               ></iframe>
-              <button className="bg-defined-green text-white text-lg py-2 w-full mt-3 rounded">
+              {isModalOpen && (
+                <div
+                  className="fixed inset-0 z-[70] flex items-center justify-center bg-black bg-opacity-50"
+                  onClick={toggleBookingModal}
+                >
+                  <div
+                    className="w-[90%] max-w-md p-6 rounded-lg shadow-lg relative"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <button
+                      onClick={toggleBookingModal}
+                      className="absolute cursor-pointer top-6 md:right-11 right-2 z-40 text-2xl opacity-50 text-gray-700 hover:text-red-500 bg-white"
+                    >
+                      ✖
+                    </button>
+                    <CustomerFormCard />
+                  </div>
+                </div>
+              )}
+              <button
+                onClick={toggleBookingModal}
+                className="bg-defined-green text-white text-lg py-2 w-full mt-3 rounded"
+              >
                 Pay Now
               </button>
             </div>
@@ -118,7 +145,14 @@ const Footer = () => {
           <h1>
             Design & Developed By:{" "}
             <span className="font-semibold">
-              <a target="_blank" href="https://rebootai.in/" className="hover:text-defined-green hover:underline"> Reboot AI Pvt. Ltd.</a>
+              <a
+                target="_blank"
+                href="https://rebootai.in/"
+                className="hover:text-defined-green hover:underline"
+              >
+                {" "}
+                Reboot AI Pvt. Ltd.
+              </a>
             </span>
           </h1>
         </div>
