@@ -1,9 +1,6 @@
 import Image from "next/image";
-import React, { useState } from "react";
-import {
-  FaMobile,
-  FaWhatsapp,
-} from "react-icons/fa";
+import React, { useEffect, useRef, useState } from "react";
+import { FaMobile, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
 import Link from "next/link";
@@ -16,12 +13,30 @@ const Footer = () => {
     { name: "Our Rooms", path: "/rooms" },
     { name: "Testimonials", path: "/testimonials" },
     { name: "Contact Us", path: "/contact" },
-  ]
+  ];
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleBookingModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setIsModalOpen(false);
+      }
+    };
+
+    if (isModalOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isModalOpen]);
   return (
     <footer className="relative w-full p-6 lg:p-8 border-t-4 border-defined-orange">
       <div
@@ -103,25 +118,7 @@ const Footer = () => {
                 loading="lazy"
                 className="rounded-lg w-full h-[10rem] lg:h-[12rem]"
               ></iframe>
-              {isModalOpen && (
-                <div
-                  className="fixed inset-0 z-[70] flex items-center justify-center bg-black bg-opacity-50"
-                  onClick={toggleBookingModal}
-                >
-                  <div
-                    className="w-[90%] max-w-md p-6 rounded-lg shadow-lg relative"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <button
-                      onClick={toggleBookingModal}
-                      className="absolute cursor-pointer top-6 md:right-11 right-2 z-40 text-2xl opacity-50 text-gray-700 hover:text-red-500 bg-white"
-                    >
-                      ✖
-                    </button>
-                    <CustomerFormCard />
-                  </div>
-                </div>
-              )}
+
               <button
                 onClick={toggleBookingModal}
                 className="bg-defined-green text-white text-lg py-2 w-full mt-3 rounded"
@@ -157,6 +154,22 @@ const Footer = () => {
           </h1>
         </div>
       </div>
+      {isModalOpen && (
+        <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black bg-opacity-50">
+          <div
+            ref={modalRef}
+            className="w-[90%] max-w-md p-6 rounded-lg shadow-lg relative"
+          >
+            <button
+              onClick={toggleBookingModal}
+              className="absolute top-7 rounded-md bg-white p-2 size-8 flex justify-center items-center opacity-55 right-10 z-[80] text-xl text-gray-700 hover:text-red-500"
+            >
+              ✖
+            </button>
+            <CustomerFormCard />
+          </div>
+        </div>
+      )}
     </footer>
   );
 };
