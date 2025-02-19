@@ -123,13 +123,15 @@ const Header = () => {
             ref={modalRef}
             className=" w-[90%] max-w-md p-6 rounded-lg shadow-lg relative"
           >
-            <button
-              onClick={toggleBookingModal}
-              className="absolute top-7 rounded-md bg-white p-2 size-8 flex justify-center items-center opacity-55 right-10 z-[80] text-xl text-gray-700 hover:text-red-500"
-            >
-              ✖
-            </button>
-            <CustomerFormCard />
+            <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black bg-opacity-50">
+              <button
+                onClick={toggleBookingModal}
+                className="absolute top-7 rounded-md bg-white p-2 size-8 flex justify-center items-center opacity-55 right-10 z-[80] text-xl text-gray-700 hover:text-red-500"
+              >
+                ✖
+              </button>
+              <CustomerFormCard />
+            </div>
           </div>
         </div>
       )}
