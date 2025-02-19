@@ -6,24 +6,24 @@ import CustomerFormCard from "../cards/CustomerFormCard";
 
 const AboutSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  // const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const toggleBookingModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 768);
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsSmallScreen(window.innerWidth < 768);
+  //   };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
+  //   handleResize();
+  //   window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
 
   return (
     <section>
