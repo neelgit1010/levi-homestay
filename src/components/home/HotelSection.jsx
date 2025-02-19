@@ -24,11 +24,11 @@ const HotelSection = () => {
               </h1>
               <p className="text-center">
                 Experience the best comfort at Levi Homestay, the top choice in
-                Siliguri! <br /> Our AC and Non-AC rooms are designed for ultimate
-                relaxation, offering a clean, peaceful, and homely stay. <br /> With
-                exceptional service and a prime location, we ensure a
-                hassle-free and cozy experience. Book your stay today and feel
-                at home with us! Comfort redefined!
+                Siliguri! <br /> Our AC and Non-AC rooms are designed for
+                ultimate relaxation, offering a clean, peaceful, and homely
+                stay. <br /> With exceptional service and a prime location, we
+                ensure a hassle-free and cozy experience. Book your stay today
+                and feel at home with us! Comfort redefined!
               </p>
 
               <button
@@ -42,8 +42,14 @@ const HotelSection = () => {
         </div>
 
         {isModalOpen && (
-          <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black bg-opacity-50">
-            <div className="w-[90%] max-w-md p-6 rounded-lg shadow-lg relative">
+          <div
+            className="fixed inset-0 z-[70] flex items-center justify-center bg-black bg-opacity-50"
+            onClick={toggleBookingModal} 
+          >
+            <div
+              className="w-[90%] max-w-md p-6 rounded-lg shadow-lg relative"
+              onClick={(e) => e.stopPropagation()} 
+            >
               <button
                 onClick={toggleBookingModal}
                 className="absolute cursor-pointer top-6 right-11 z-40 text-2xl opacity-50 text-gray-700 hover:text-red-500 bg-white"
