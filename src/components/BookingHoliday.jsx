@@ -5,6 +5,10 @@ const BookingHoliday = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     
+    if(!formValues.name || !formValues.mobile || !formValues.guests || !formValues.date) {
+      alert("Please fill all the fields");
+      return;
+    }
     const dest = "+918920907973";
 
     const message = `*Name:* ${formValues.name}%0A
