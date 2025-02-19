@@ -101,8 +101,14 @@ const Header = () => {
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black bg-opacity-50">
-          <div className=" w-[90%] max-w-md p-6 rounded-lg shadow-lg relative">
+        <div
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-black bg-opacity-50"
+          onClick={toggleBookingModal} 
+        >
+          <div
+            className="w-[90%] max-w-md p-6 rounded-lg shadow-lg relative"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={toggleBookingModal}
               className="absolute top-7 rounded-md bg-white p-2 opacity-55 right-10 z-[80] text-xl text-gray-700 hover:text-red-500"
