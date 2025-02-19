@@ -4,15 +4,15 @@ import { MdOutlineGroup } from "react-icons/md";
 import { PiHamburgerDuotone } from "react-icons/pi";
 
 const RoomCard = ({ roomInfo }) => {
-
   const handleBooking = (name) => {
     const dest = "+918920907973";
     const message = `Hello! I am interested in: ${name}
 Thank You!`;
-    const url = `https://api.whatsapp.com/send?phone=${dest}&text=${encodeURIComponent(message)}`;
+    const url = `https://api.whatsapp.com/send?phone=${dest}&text=${encodeURIComponent(
+      message
+    )}`;
     window.open(url, "_blank").focus();
   };
-
 
   const items = [
     {
@@ -36,23 +36,29 @@ Thank You!`;
       value: roomInfo.food,
     },
   ];
+
   return (
-    <div className="rounded-md shadow-lg w-full h-full">
-      <div className="w-full">
+    <div className="rounded-md shadow-lg w-full h-full flex flex-col">
+
+      <div className="w-full h-64 overflow-hidden">
         <Image
           src={roomInfo.img}
           alt="single"
           width={500}
           height={500}
-          className="w-full h-full"
+          className="w-full h-full object-cover"
         />
       </div>
 
-      <div className="p-4 flex flex-col gap-4">
+
+      <div className="p-4 flex flex-col gap-4 flex-grow">
         <div className="flex justify-between items-center">
           {items &&
             items.map((item, index) => (
-              <div className="flex gap-1 flex-col justify-center items-center">
+              <div
+                key={index}
+                className="flex gap-1 flex-col justify-center items-center"
+              >
                 <div className="text-2xl text-defined-orange">{item.icon}</div>
                 <div className="text-defined-blue">{item.name}</div>
                 <div className="text-defined-blue">{item.value}</div>
@@ -66,7 +72,8 @@ Thank You!`;
               {roomInfo.name}
             </h1>
           </div>
-          <button className="bg-defined-green text-white py-2 px-8 rounded-sm transition-all duration-300 font-semibold hover:bg-green-700 w-[90%]"
+          <button
+            className="bg-defined-green text-white py-2 px-8 rounded-sm transition-all duration-300 font-semibold hover:bg-green-700 w-[90%]"
             onClick={() => handleBooking(roomInfo.name)}
           >
             Book Now
