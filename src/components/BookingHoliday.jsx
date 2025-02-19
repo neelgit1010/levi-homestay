@@ -22,24 +22,23 @@ const BookingHoliday = () => {
 
   return (
     <div className="flex w-full justify-center items-center">
-      <div>
+      <div className="md:w-[90%]">
         <h1 className="text-3xl font-bold text-defined-orange p-4 text-center">
           Book Your Perfect Holiday Plan Today!
         </h1>
 
-        {/* Background Section */}
         <div
           style={{ backgroundImage: `url(/images/book-form.png)` }}
-          className="relative bg-cover bg-center bg-no-repeat w-full h-[20rem] md:h-[4rem] flex items-center justify-center md:justify-between"
+          className="relative bg-cover bg-center bg-no-repeat w-full h-[20rem] md:h-[8rem] flex items-center justify-center md:justify-between"
         >
-          {/* Overlay (for visibility improvement) */}
+
           <div className="absolute inset-0 bg-defined-green opacity-50"></div>
 
-          {/* Form Wrapper (Responsive Behavior) */}
-          <div className="relative z-10 p-6 w-full flex flex-col gap-4 md:flex-row">
+
+          <div className="relative z-10 p-8 w-full flex flex-col gap-4 md:flex-row">
             <form
               onSubmit={handleFormSubmit}
-              className="flex flex-col gap-4 md:flex-row justify-center"
+              className="flex flex-col gap-4 w-full md:flex-row justify-center"
             >
               <input
                 type="text"

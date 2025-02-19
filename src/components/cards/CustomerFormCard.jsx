@@ -23,7 +23,7 @@ const CustomerFormCard = () => {
   };
 
   return (
-    <div className="flex justify-center items-center w-full">
+    <div className="flex justify-center items-center w-full h-full">
       <div>
         <div
           style={{ backgroundImage: `url(/images/cust-form.png)` }}
@@ -89,7 +89,7 @@ const CustomerFormCard = () => {
                 id="message"
                 cols="30"
                 rows="3"
-                className=" w-full p-2  rounded"
+                className=" w-full p-2  rounded max-h-24"
                 onChange={(e) =>
                   setFormValues({ ...formValues, message: e.target.value })
                 }

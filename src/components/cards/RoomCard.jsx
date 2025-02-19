@@ -39,8 +39,7 @@ Thank You!`;
 
   return (
     <div className="rounded-md shadow-lg w-full h-full flex flex-col">
-
-      <div className="w-full h-64 overflow-hidden">
+      <div className="w-full h-64">
         <Image
           src={roomInfo.img}
           alt="single"
@@ -50,8 +49,7 @@ Thank You!`;
         />
       </div>
 
-
-      <div className="p-4 flex flex-col gap-4 flex-grow">
+      <div className="p-4 flex flex-col justify-between gap-4 flex-grow">
         <div className="flex justify-between items-center">
           {items &&
             items.map((item, index) => (

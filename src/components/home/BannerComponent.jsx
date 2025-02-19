@@ -4,7 +4,6 @@ import Image from "next/image";
 const BannerComponent = () => {
   const router = useRouter();
 
-  // Mapping route paths to titles and paths
   const pageData = {
     "/contact": { title: "Contact Us", path: "Home / Contact" },
     "/about": { title: "About Us", path: "Home / About" },
@@ -12,20 +11,20 @@ const BannerComponent = () => {
     "/testimonials": { title: "Testimonials",path: "Home / Testimonials"},
   };
 
-  // Get page details, fallback to a default title if not found
+  // this is default for home page only
   const { title, path } = pageData[router.pathname] || {
     title: "",
     path: "",
   };
 
   return (
-    <div className="w-full relative">
+    <div className="w-full h-auto relative">
       <Image
         src="/images/banner.png"
         alt="banner"
         width={1920}
-        height={600}
-        className="w-full h-auto object-cover"
+        height={500}
+        className="w-full h-[20rem] object-cover"
       />
 
       <div className="absolute inset-0 bg-black opacity-60"></div>

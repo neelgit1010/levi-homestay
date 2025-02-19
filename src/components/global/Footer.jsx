@@ -16,15 +16,9 @@ const Footer = () => {
     { name: "Testimonials", path: "/testimonials" },
     { name: "Contact Us", path: "/contact" },
   ]
-  const rooms = [
-    { name: "Single Occupancy"},
-    { name: "Double Occupancy" },
-    { name: "Triple Occupancy" },
-    { name: "Quad Occupancy" },
-  ]
+
   return (
     <footer className="relative w-full p-6 lg:p-8 border-t-4 border-defined-orange">
-
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(/foot-img.png)` }}
@@ -65,7 +59,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-4 w-full lg:w-[60%] lg:flex-row">
+            <div className="flex flex-col gap-4 w-full lg:w-[35%] lg:flex-row">
               {/* Quick Links */}
               <div className="w-1/2">
                 <h1 className="font-bold">Quick Links</h1>
@@ -98,7 +92,7 @@ const Footer = () => {
             </div>
 
             {/* Right Section */}
-            <div className="w-full lg:w-[20%]">
+            <div className="w-full lg:w-[30%]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.4667864584976!2d88.4333205!3d26.725386399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e4415c197875e7%3A0xb069b8c0fcfa1289!2sLevi%20Home!5e1!3m2!1sen!2sin!4v1739612837939!5m2!1sen!2sin"
                 loading="lazy"
@@ -116,14 +110,16 @@ const Footer = () => {
         <div className="text-sm text-white flex flex-col md:flex-row justify-between items-center">
           <h1>
             © 2025{" "}
-            <span className="text-defined-green">
-              Levi Homestay
+            <span className="text-defined-green hover:underline">
+              <Link href="/"> Levi Homestay</Link>
             </span>{" "}
             - All Rights Reserved
           </h1>
           <h1>
             Design & Developed By:{" "}
-            <span className="font-semibold">Reboot AI Pvt. Ltd.</span>
+            <span className="font-semibold">
+              <a target="_blank" href="https://rebootai.in/" className="hover:text-defined-green hover:underline"> Reboot AI Pvt. Ltd.</a>
+            </span>
           </h1>
         </div>
       </div>
