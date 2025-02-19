@@ -55,7 +55,7 @@ Thank You!`;
             items.map((item, index) => (
               <div
                 key={index}
-                className="flex gap-1 flex-col justify-center items-center"
+                className="flex flex-col justify-center items-center"
               >
                 <div className="text-2xl text-defined-orange">{item.icon}</div>
                 <div className="text-defined-blue">{item.name}</div>
@@ -66,7 +66,7 @@ Thank You!`;
 
         <div className="flex flex-col justify-center items-center gap-3">
           <div>
-            <h1 className="text-defined-blue text-3xl font-semibold text-center">
+            <h1 className="text-defined-blue text-2xl xlg:text-3xl font-semibold text-center">
               {roomInfo.name}
             </h1>
           </div>

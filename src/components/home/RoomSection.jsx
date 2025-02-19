@@ -54,7 +54,7 @@ const RoomSection = () => {
   ];
 
   return (
-    <section className="w-full px-4 py-8">
+    <section className="w-full xl:p-16 lg:p-8 p-4">
       <div className="max-w-7xl mx-auto flex flex-col gap-6">
         <h1 className="text-2xl font-bold text-defined-blue text-center">
           Discover Rooms & Suites

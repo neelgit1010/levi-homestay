@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -9,6 +9,7 @@ import CustomerFormCard from "@/components/cards/CustomerFormCard";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef(null);
 
   const menuItems = [
     { name: "Home", path: "/" },
@@ -25,6 +26,22 @@ const Header = () => {
   const toggleBookingModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setIsModalOpen(false);
+      }
+    };
+
+    if (isModalOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isModalOpen]);
 
   return (
     <header>
@@ -102,10 +119,13 @@ const Header = () => {
 
       {isModalOpen && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black bg-opacity-50">
-          <div className=" w-[90%] max-w-md p-6 rounded-lg shadow-lg relative">
+          <div
+            ref={modalRef}
+            className=" w-[90%] max-w-md p-6 rounded-lg shadow-lg relative"
+          >
             <button
               onClick={toggleBookingModal}
-              className="absolute top-7 rounded-md bg-white p-2 opacity-55 right-10 z-[80] text-xl text-gray-700 hover:text-red-500"
+              className="absolute top-7 rounded-md bg-white p-2 size-8 flex justify-center items-center opacity-55 right-10 z-[80] text-xl text-gray-700 hover:text-red-500"
             >
               ✖
             </button>

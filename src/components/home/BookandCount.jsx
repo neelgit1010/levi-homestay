@@ -32,7 +32,7 @@ const BookandCount = () => {
       <div className="flex flex-col items-center justify-center gap-4 p-8">
         <BookingHoliday />
 
-        <div className="p-6 flex flex-col md:flex-row gap-4 justify-center items-center">
+        <div className="p-6 grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4  gap-4 justify-center items-center">
           {countings.map((item, index) => (
             <BookingCount
               key={index}

@@ -5,7 +5,6 @@ const Slider = dynamic(() => import("react-slick"), {
 });
 
 const CustomerReviews = () => {
-
   const reviews = [
     {
       review:
@@ -24,17 +23,17 @@ const CustomerReviews = () => {
     },
   ];
 
-   const settings = {
-     infinite: true,
-     slidesToShow: 1,
-     slidesToScroll: 1,
-     autoplay: true,
-     autoplaySpeed: 3000,
-     arrows: false,
-     rtl: true,
-   };
+  const settings = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    rtl: true,
+  };
   return (
-    <div className="w-full md:w-1/2 flex flex-col gap-4 md:pl-4">
+    <div className="  flex flex-col gap-4">
       <p className="text-defined-green text-xl mt-2">Genuine Reviews</p>
       <h1 className="text-3xl text-defined-blue font-bold">
         Customer talk about us
@@ -69,15 +68,17 @@ const CustomerReviews = () => {
       <Slider {...settings}>
         {reviews.map((review, index) => (
           <div key={index}>
-            <p className="text-gray-500">
+            <p className="text-gray-500 lg:text-base text-sm">
               {review.review}
             </p>
-            <h1 className="text-2xl text-defined-orange">{review.name}</h1>
+            <h1 className="lg:text-2xl text-xl text-defined-orange">
+              {review.name}
+            </h1>
           </div>
         ))}
       </Slider>
     </div>
   );
-}
+};
 
-export default CustomerReviews
+export default CustomerReviews;
