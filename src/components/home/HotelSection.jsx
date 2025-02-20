@@ -41,12 +41,13 @@ const HotelSection = () => {
                 Get the Best Comfort in Our Hotel
               </h1>
               <p className="text-center">
-                Experience the best comfort at Levi Homestay, the top choice in
-                Siliguri! <br /> Our AC and Non-AC rooms are designed for
-                ultimate relaxation, offering a clean, peaceful, and homely
-                stay. <br /> With exceptional service and a prime location, we
-                ensure a hassle-free and cozy experience. Book your stay today
-                and feel at home with us! Comfort redefined!
+                Experience the best comfort at Levi Home Guest House & Retreat
+                Centre, the top choice in Siliguri! <br /> Our AC and Non-AC
+                rooms are designed for ultimate relaxation, offering a clean,
+                peaceful, and homely stay. <br /> With exceptional service and a
+                prime location, we ensure a hassle-free and cozy experience.
+                Book your stay today and feel at home with us! Comfort
+                redefined!
               </p>
 
               <button

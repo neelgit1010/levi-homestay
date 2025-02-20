@@ -83,25 +83,34 @@ const AboutSection = () => {
             Levi Home Guest House & Retreat Centre
           </h1>
           <p className="text-gray-500 xlg:text-base text-sm">
-            Welcome to <span className="text-defined-blue">Levi Homestay</span>,
-            your home away from home in the heart of Siliguri! Renowned as the
+            Welcome to{" "}
+            <span className="text-defined-blue">
+              Levi Home Guest House & Retreat Centre
+            </span>
+            , your home away from home in the heart of Siliguri! Renowned as the
             finest homestay experience in the region, we take pride in offering
             unparalleled comfort and hospitality to travelers seeking a
             memorable stay. Whether you're visiting for business or leisure, our
             thoughtfully designed AC and non-AC rooms cater to every need,
             ensuring a cozy and relaxing environment. <br />
-            At <span className="text-defined-blue">Levi Homestay</span>, we
-            understand that modern travelers value connectivity, which is why we
-            provide complimentary high-speed Wi-Fi throughout the property. Our
-            warm and inviting ambiance makes you feel instantly at ease, while
-            our attentive staff ensures all your needs are met with a personal
-            touch. Located strategically in Siliguri, our homestay serves as an
-            ideal base to explore the city's vibrant culture, local attractions,
-            and nearby destinations. <br />
-            Choose <span className="text-defined-blue">Levi Homestay</span> for
-            an unforgettable experience where comfort meets affordability. We're
-            not just a place to stay; we're your gateway to discovering the true
-            essence of Siliguri. Come, be part of our family!
+            At{" "}
+            <span className="text-defined-blue">
+              Levi Home Guest House & Retreat Centre
+            </span>
+            , we understand that modern travelers value connectivity, which is
+            why we provide complimentary high-speed Wi-Fi throughout the
+            property. Our warm and inviting ambiance makes you feel instantly at
+            ease, while our attentive staff ensures all your needs are met with
+            a personal touch. Located strategically in Siliguri, our homestay
+            serves as an ideal base to explore the city's vibrant culture, local
+            attractions, and nearby destinations. <br />
+            Choose{" "}
+            <span className="text-defined-blue">
+              Levi Home Guest House & Retreat Centre
+            </span>{" "}
+            for an unforgettable experience where comfort meets affordability.
+            We're not just a place to stay; we're your gateway to discovering
+            the true essence of Siliguri. Come, be part of our family!
           </p>
           <div className="flex gap-3 lg:gap-8 text-xl w-full">
             <div className="flex items-center gap-2">

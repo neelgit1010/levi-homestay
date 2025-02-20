@@ -1,4 +1,4 @@
-import {FaMobile, FaWhatsapp } from "react-icons/fa";
+import { FaMobile, FaWhatsapp } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import CustomerFormCard from "../cards/CustomerFormCard";
@@ -16,8 +16,10 @@ const ContactInfoSection = () => {
               For inquiries or bookings, feel free to reach out through our
               contact form or visit us directly. We’re here to assist you with
               any questions about{" "}
-              <span className="text-defined-blue">Levi Homestay</span>. Connect
-              with us today and let us make your stay exceptional!
+              <span className="text-defined-blue">
+                Levi Home Guest House & Retreat Centre
+              </span>
+              . Connect with us today and let us make your stay exceptional!
             </p>
             <div className="text-base lg:text-sm text-defined-blue">
               <div className="flex items-center gap-2">
@@ -30,12 +32,12 @@ const ContactInfoSection = () => {
               </div>
               <div className="flex items-center gap-2">
                 <MdEmail className="text-defined-orange" />
-                <span>levihomestayslg@email.com</span>
+                <span>slg.levihome@gmail.com </span>
               </div>
               <div className="flex gap-2 w-full xl:w-[80%]">
                 <IoLocationSharp className="text-defined-orange text-xl" />
                 <span>
-                  Punjabi Para, Mission Compound, Shiv Mandir Rd. Siliguri, WB
+                  Punjabi Para, Church Compound, Shiv Mandir Rd. Siliguri, WB
                   734001
                 </span>
               </div>
@@ -55,6 +57,6 @@ const ContactInfoSection = () => {
       </div>
     </div>
   );
-}
+};
 
-export default ContactInfoSection
+export default ContactInfoSection;
