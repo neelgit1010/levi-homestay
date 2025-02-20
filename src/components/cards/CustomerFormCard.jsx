@@ -2,55 +2,48 @@ import { useState } from "react";
 
 const CustomerFormCard = () => {
   const [formValues, setFormValues] = useState({});
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    if (
-      !formValues.name ||
-      !formValues.mobile ||
-      !formValues.checkin ||
-      !formValues.checkout ||
-      !formValues.guests ||
-      !formValues.message
-    ) {
-      alert("Please fill all the fields");
-      return;
-    }
-    
-    if(formValues.checkin.length !== 10 || formValues.checkout.length !== 10) {
-      alert("Please enter a valid date");
-      return;
-    }
+ const handleFormSubmit = (e) => {
+   e.preventDefault();
+   if (
+     !formValues.name ||
+     !formValues.mobile ||
+     !formValues.checkin ||
+     !formValues.checkout ||
+     !formValues.guests ||
+     !formValues.message
+   ) {
+     alert("Please fill all the fields");
+     return;
+   }
 
-    if (Number(formValues.checkin.split("-")[0]) < 2025 || Number(formValues.checkout.split("-")[0]) < 2025) {
-      alert("Please enter a valid date");
-      return;
-    }
-      if (formValues.checkin > formValues.checkout) {
-        alert("Check-in date should be before check-out date");
-        return;
-      }
+   if (formValues.mobile.length !== 10) {
+     alert("Please enter a valid mobile number");
+     return;
+   }
 
-    if (formValues.mobile.length !== 10) {
-      alert("Please enter a valid mobile number");
-      return;
-    }
+   if (formValues.checkin > formValues.checkout) {
+     alert("Check-in date should be before check-out date");
+     return;
+   }
 
-    if (formValues.guests < 1) {  
-      alert("Please enter a valid number of guests");
-      return;
-    }
-    const dest = "+918920907973";
+   const dest = "+918920907973";
+   const message = `*Name:* ${formValues.name}%0A
+  *Phone:* ${formValues.mobile}%0A
+  *Check-in Date:* ${formValues.checkin}%0A
+  *Check-out Date:* ${formValues.checkout}%0A
+  *No. of Guests:* ${formValues.guests}%0A
+  *Message:* ${formValues.message}`;
 
-    const message = `*Name:* ${formValues.name}%0A
-*Phone:* ${formValues.mobile}%0A
-*Check-in Date:* ${formValues.checkin}%0A
-*Check-out Date:* ${formValues.checkout}%0A
-*No. of Guests:* ${formValues.guests}%0A
-*Message:* ${formValues.message}`;
+   // Check if user is on mobile
+   const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+   const baseUrl = isMobile
+     ? "https://api.whatsapp.com/send"
+     : "https://web.whatsapp.com/send";
 
-    const url = `https://api.whatsapp.com/send?phone=${dest}&text=${message}`;
-    window.open(url, "_blank").focus();
-  };
+   const url = `${baseUrl}?phone=${dest}&text=${message}`;
+   window.open(url, "_blank").focus();
+ };
+
 
   return (
     <div className="w-full">

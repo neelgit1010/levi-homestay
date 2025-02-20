@@ -4,28 +4,33 @@ const BookingHoliday = () => {
   const [formValues, setFormValues] = useState({});
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    
-    if(!formValues.name || !formValues.mobile || !formValues.guests || !formValues.date) {
+
+    if (
+      !formValues.name ||
+      !formValues.mobile ||
+      !formValues.guests ||
+      !formValues.date
+    ) {
       alert("Please fill all the fields");
       return;
     }
 
-    if(formValues.date.length !== 10) {
+    if (formValues.date.length !== 10) {
       alert("Please enter a valid date");
       return;
     }
 
-    if(Number(formValues.date.split("-")[0]) < 2025) {
+    if (Number(formValues.date.split("-")[0]) < 2025) {
       alert("Please enter a valid date");
       return;
     }
 
-    if(formValues.mobile.length !== 10) {
+    if (formValues.mobile.length !== 10) {
       alert("Please enter a valid mobile number");
       return;
     }
 
-    if(formValues.guests < 1) {
+    if (formValues.guests < 1) {
       alert("Please enter a valid number of guests");
       return;
     }
@@ -35,9 +40,15 @@ const BookingHoliday = () => {
     const message = `*Name:* ${formValues.name}%0A
 *Phone:* ${formValues.mobile}%0A
 *Number of Guests:* ${formValues.guests}%0A
-*Date:* ${formValues.date}%0A`
+*Date:* ${formValues.date}%0A`;
 
-    const url = `https://api.whatsapp.com/send?phone=${dest}&text=${message}`;
+    // Check if user is on mobile
+    const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+    const baseUrl = isMobile
+      ? "https://api.whatsapp.com/send"
+      : "https://web.whatsapp.com/send";
+
+    const url = `${baseUrl}?phone=${dest}&text=${message}`;
     window.open(url, "_blank").focus();
   };
 
