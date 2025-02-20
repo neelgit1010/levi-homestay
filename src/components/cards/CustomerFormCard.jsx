@@ -52,7 +52,7 @@ const CustomerFormCard = () => {
               }
             />
             <input
-              type="text"
+              type="number"
               placeholder="Mobile Number"
               name="mobile"
               className=" w-full p-2  rounded"
