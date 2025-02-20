@@ -43,7 +43,7 @@ const Footer = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(/foot-img.png)` }}
       >
-        <div className="absolute inset-0 bg-defined-blue opacity-90"></div>{" "}
+        <div className="absolute inset-0 bg-defined-blue opacity-80"></div>{" "}
       </div>
 
       <div className="relative z-10 text-white">
@@ -56,7 +56,7 @@ const Footer = () => {
                 Comfortable and Affordable Guest House in Siliguri – <br />
                 Your Perfect Homestay Experience
               </p>
-              <div className="text-base lg:text-sm text-white">
+              <div className="text-base lg:text-base text-white">
                 <div className="flex items-center gap-2">
                   <FaWhatsapp className="text-defined-green" />
                   <span>+91 89209 07973</span>
@@ -67,25 +67,26 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <MdEmail className="text-defined-green" />
-                  <span>levihomestayslg@email.com</span>
+                  <span>slg.levihome@gmail.com</span>
                 </div>
                 <div className="flex gap-2 w-full xl:w-[80%]">
                   <IoLocationSharp className="text-defined-green text-xl" />
                   <span>
-                    Punjabi Para, Mission Compound, Shiv Mandir Rd. Siliguri, WB
+                    Punjabi Para, Church Compound, Shiv Mandir Rd. Siliguri, WB
                     734001
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col gap-4 w-full lg:w-[35%] lg:flex-row">
+            <div className="flex flex-col gap-4 w-full lg:w-[30%] lg:flex-row">
               {/* Quick Links */}
-              <div className="w-1/2">
+              <div className="w-1/2 flex flex-col gap-4">
                 <h1 className="font-bold">Quick Links</h1>
                 <ul className="text-white text-sm">
                   {quickLinks.map((item, index) => (
-                    <li key={index} className="py-1">
+                    <li key={index} className="py-2 hover:text-defined-green">
+                      {">  "}
                       <Link href={item.path}>{item.name}</Link>
                     </li>
                   ))}
@@ -93,7 +94,7 @@ const Footer = () => {
               </div>
 
               {/* Our Best Rooms */}
-              <div className="w-1/2">
+              <div className="w-1/2 flex flex-col gap-4">
                 <h1 className="font-bold">Our Best Rooms</h1>
                 <ul className="text-white text-sm">
                   {[
@@ -103,8 +104,8 @@ const Footer = () => {
                     "Dormitory",
                     "Levi's Kitchen",
                   ].map((item, index) => (
-                    <li key={index} className="py-1">
-                      <Link href="/rooms">{item}</Link>
+                    <li key={index} className="py-2 hover:text-defined-green">
+                      {">  "} <Link href="/rooms">{item}</Link>
                     </li>
                   ))}
                 </ul>
@@ -135,7 +136,7 @@ const Footer = () => {
           <h1>
             © 2025{" "}
             <span className="text-defined-green hover:underline">
-              <Link href="/"> Levi Homestay</Link>
+              <Link href="/"> Levi Home Guest House & Retreat Centre</Link>
             </span>{" "}
             - All Rights Reserved
           </h1>

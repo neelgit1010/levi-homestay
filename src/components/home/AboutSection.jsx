@@ -80,7 +80,7 @@ const AboutSection = () => {
         >
           <p className="text-defined-green text-lg xlg:text-xl">About Us</p>
           <h1 className="xlg:text-3xl text-2xl text-defined-blue font-bold">
-            Levi Homestay
+            Levi Home Guest House & Retreat Centre
           </h1>
           <p className="text-gray-500 xlg:text-base text-sm">
             Welcome to <span className="text-defined-blue">Levi Homestay</span>,
