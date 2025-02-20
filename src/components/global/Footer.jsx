@@ -83,7 +83,7 @@ const Footer = () => {
               {/* Quick Links */}
               <div className="w-1/2 flex flex-col gap-4">
                 <h1 className="font-bold">Quick Links</h1>
-                <ul className="text-white text-sm">
+                <ul className="text-white text-base">
                   {quickLinks.map((item, index) => (
                     <li key={index} className="py-2 hover:text-defined-green">
                       {">  "}
@@ -96,7 +96,7 @@ const Footer = () => {
               {/* Our Best Rooms */}
               <div className="w-1/2 flex flex-col gap-4">
                 <h1 className="font-bold">Our Best Rooms</h1>
-                <ul className="text-white text-sm">
+                <ul className="text-white text-base">
                   {[
                     "Deluxe Rooms",
                     "Standard Room",
