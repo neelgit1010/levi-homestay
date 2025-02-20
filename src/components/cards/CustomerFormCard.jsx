@@ -30,8 +30,15 @@ const CustomerFormCard = () => {
         return;
       }
 
+    if (formValues.mobile.length !== 10) {
+      alert("Please enter a valid mobile number");
+      return;
+    }
 
-
+    if (formValues.guests < 1) {  
+      alert("Please enter a valid number of guests");
+      return;
+    }
     const dest = "+918920907973";
 
     const message = `*Name:* ${formValues.name}%0A
