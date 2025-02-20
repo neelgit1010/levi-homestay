@@ -72,7 +72,7 @@ const Footer = () => {
                 <div className="flex gap-2 w-full xl:w-[80%]">
                   <IoLocationSharp className="text-defined-green text-xl" />
                   <span>
-                    Punjabi Para, Church Compound, Shiv Mandir Rd. Siliguri, <br />WB
+                    Punjabi Para, Church Compound, Shiv Mandir Rd. Siliguri, <br className="hidden md:block"/>WB
                     734001
                   </span>
                 </div>
