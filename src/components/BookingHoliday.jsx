@@ -9,6 +9,17 @@ const BookingHoliday = () => {
       alert("Please fill all the fields");
       return;
     }
+
+    if(formValues.date.length !== 10) {
+      alert("Please enter a valid date");
+      return;
+    }
+
+    if(Number(formValues.date.split("-")[0]) < 2025) {
+      alert("Please enter a valid date");
+      return;
+    }
+
     const dest = "+918920907973";
 
     const message = `*Name:* ${formValues.name}%0A
@@ -48,7 +59,7 @@ const BookingHoliday = () => {
                 onChange={(e) => setFormValues({ ...formValues, name: e.target.value })}
               />
               <input
-                type="text"
+                type="number"
                 placeholder="Mobile Number"
                 name="mobile"
                 className="md:w-[20%] w-full p-2  rounded"

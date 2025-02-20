@@ -15,6 +15,22 @@ const CustomerFormCard = () => {
       alert("Please fill all the fields");
       return;
     }
+    
+    if(formValues.checkin.length !== 10 || formValues.checkout.length !== 10) {
+      alert("Please enter a valid date");
+      return;
+    }
+
+    if (Number(formValues.checkin.split("-")[0]) < 2025 || Number(formValues.checkout.split("-")[0]) < 2025) {
+      alert("Please enter a valid date");
+      return;
+    }
+      if (formValues.checkin > formValues.checkout) {
+        alert("Check-in date should be before check-out date");
+        return;
+      }
+
+
 
     const dest = "+918920907973";
 
